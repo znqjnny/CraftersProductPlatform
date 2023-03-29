@@ -1,0 +1,13 @@
+micronaut:
+  application:
+    name: ProductPlatform
+netty:
+  default:
+    allocator:
+      max-order: 3
+mongodb:
+  uri: mongodb+srv://znqiu:qq302315@cluster0.xxlhaty.mongodb.net/product_platform
+db:
+  product:
+    name: 'product_platform'
+    collection: 'product'

@@ -1,6 +1,6 @@
-package com.crafter.db.repo;
+package com.crafters.db.repo;
 
-import com.crafter.db.entity.Product;
+import com.crafters.db.entity.Product;
 import com.mongodb.lang.NonNull;
 
 import javax.validation.Valid;

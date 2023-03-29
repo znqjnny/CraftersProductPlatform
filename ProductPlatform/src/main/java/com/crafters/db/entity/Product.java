@@ -1,4 +1,4 @@
-package com.crafter.db.entity;
+package com.crafters.db.entity;
 
 
 import io.micronaut.core.annotation.Creator;

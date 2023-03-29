@@ -1,4 +1,4 @@
-package com.crafter;
+package com.crafters;
 
 import io.micronaut.runtime.Micronaut;
 

@@ -1,7 +1,7 @@
-package com.crafter;
+package com.crafters;
 
-import com.crafter.db.entity.Product;
-import com.crafter.db.repo.MongoDbProductRepository;
+import com.crafters.db.entity.Product;
+import com.crafters.db.repo.MongoDbProductRepository;
 import io.micronaut.runtime.EmbeddedApplication;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
 import org.junit.jupiter.api.Test;

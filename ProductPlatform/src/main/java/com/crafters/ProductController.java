@@ -1,4 +1,4 @@
-package com.crafter;
+package com.crafters;
 
 import io.micronaut.http.annotation.Get;
 import io.micronaut.http.annotation.Controller;

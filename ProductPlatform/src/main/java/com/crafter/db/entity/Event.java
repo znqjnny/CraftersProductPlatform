@@ -1,9 +1,8 @@
-package com.crafter.entity;
+package com.crafter.db.entity;
 
-import io.micronaut.data.annotation.MappedEntity;
 
 import java.time.LocalDateTime;
-@MappedEntity
+
 public class Event {
     private String id;
     private String name;

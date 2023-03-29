@@ -1,10 +1,9 @@
-package com.crafter.entity;
+package com.crafter.db.entity;
 
-import io.micronaut.data.annotation.MappedEntity;
 
 import java.time.LocalDateTime;
 
-@MappedEntity
+
 public class Customer {
     private String id;
     private String firstName;

@@ -31,8 +31,8 @@ class ProductPlatformTest {
 
     @Test
     void testProduct() {
-        mongoDbProductRepository.save(new Product().withName("ticket13").withInStock(23100)
-                .withEvent(new Event().withName("even1t0").withCreatedAt(LocalDateTime.now())));
+        mongoDbProductRepository.save(new Product().withName("ticket1233").withInStock(23100)
+                .withEvent(new Event().withName("eve1n1t0").withCreatedAt(LocalDateTime.now())));
     }
 
     @Test

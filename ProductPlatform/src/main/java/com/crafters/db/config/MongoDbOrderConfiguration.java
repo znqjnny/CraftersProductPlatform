@@ -4,8 +4,8 @@ import io.micronaut.context.annotation.ConfigurationProperties;
 import io.micronaut.core.annotation.NonNull;
 import io.micronaut.core.naming.Named;
 
-@ConfigurationProperties("db.product")
-public interface MongoDbProductConfiguration extends Named {
+@ConfigurationProperties("db.order")
+public interface MongoDbOrderConfiguration extends Named {
     @NonNull
     String getCollection();
 }

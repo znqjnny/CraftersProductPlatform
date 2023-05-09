@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Singleton
-public class MongoDbProductRepository implements ProductRepository {
+public class MongoDbProductRepository{
     private final MongoDbProductConfiguration mongoConf;
     private final MongoClient mongoClient;
     private final MongoDatabase mongoDatabase;
@@ -24,12 +24,10 @@ public class MongoDbProductRepository implements ProductRepository {
     }
 
 
-    @Override
     public void save(Product product) {
         getCollection().insertOne(product);
     }
 
-    @Override
     @NonNull
     public List<Product> list() {
         MongoCollection<Product> collection = getCollection();

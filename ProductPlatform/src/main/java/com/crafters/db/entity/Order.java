@@ -1,13 +1,11 @@
 package com.crafters.db.entity;
 
 
-import io.micronaut.core.annotation.NonNull;
 import org.bson.codecs.pojo.annotations.BsonCreator;
 import org.bson.codecs.pojo.annotations.BsonId;
 import org.bson.codecs.pojo.annotations.BsonProperty;
 import org.bson.types.ObjectId;
 
-import javax.validation.constraints.NotBlank;
 import java.time.LocalDateTime;
 
 public class Order {
@@ -26,11 +24,9 @@ public class Order {
         this.createdAt = createdAt;
     }
 
+    public Order() {}
 
     @BsonId
-    @NonNull
-    @NotBlank
-    @BsonProperty("_id")
     private ObjectId id;
     @BsonProperty("name")
     private String name;

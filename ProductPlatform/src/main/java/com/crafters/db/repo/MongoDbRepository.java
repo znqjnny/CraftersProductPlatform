@@ -2,7 +2,6 @@ package com.crafters.db.repo;
 
 
 import com.crafters.db.config.MongoDbConfiguration;
-import com.crafters.db.entity.Product;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import io.micronaut.core.annotation.NonNull;

@@ -1,19 +1,17 @@
 package com.crafters.db.entity;
 
 
-import io.micronaut.core.annotation.NonNull;
 import org.bson.codecs.pojo.annotations.BsonCreator;
 import org.bson.codecs.pojo.annotations.BsonId;
 import org.bson.codecs.pojo.annotations.BsonProperty;
 import org.bson.types.ObjectId;
 
-import javax.validation.constraints.NotBlank;
 import java.time.LocalDateTime;
 
 
 public class Customer {
-     @BsonCreator
-     public Customer(@BsonId ObjectId id,
+    @BsonCreator
+    public Customer(@BsonId ObjectId id,
                     @BsonProperty("firstName") String firstName,
                     @BsonProperty("lastName") String lastName,
                     @BsonProperty("email") String email,
@@ -23,24 +21,22 @@ public class Customer {
                     @BsonProperty("createdAt") String createdAt,
                     @BsonProperty("updatedAt") String updatedAt,
                     @BsonProperty("gender") String gender) {
-         this.id = id;
-         this.firstName = firstName;
-         this.lastName = lastName;
-         this.email = email;
-         this.phone = phone;
-         this.zipCode = zipCode;
-         this.birthDate = birthDate;
-         this.createdAt = createdAt;
-         this.updatedAt = updatedAt;
-         this.gender = gender;
-     }
-     
-     public Customer() { }
-     
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.phone = phone;
+        this.zipCode = zipCode;
+        this.birthDate = birthDate;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.gender = gender;
+    }
+
+    public Customer() {
+    }
+
     @BsonId
-    @NonNull
-    @NotBlank
-    @BsonProperty("_id")
     private ObjectId id;
     @BsonProperty("firstName")
     private String firstName;
@@ -61,11 +57,11 @@ public class Customer {
     @BsonProperty("gender")
     private String gender;
 
-    public ObjectId  getId() {
+    public ObjectId getId() {
         return id;
     }
 
-    public Customer withId(ObjectId  id) {
+    public Customer withId(ObjectId id) {
         this.id = id;
         return this;
     }

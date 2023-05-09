@@ -1,18 +1,24 @@
 package com.crafters.db.entity;
 
 
-import io.micronaut.core.annotation.NonNull;
+import org.bson.codecs.pojo.annotations.BsonCreator;
 import org.bson.codecs.pojo.annotations.BsonId;
 import org.bson.codecs.pojo.annotations.BsonProperty;
 import org.bson.types.ObjectId;
 
-import javax.validation.constraints.NotBlank;
-
 public class Actor {
+
+    @BsonCreator
+    public Actor(@BsonId ObjectId id,
+                 @BsonProperty("name") String name,
+                 @BsonProperty("email") String email) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+    }
+    public Actor() {}
+
     @BsonId
-    @NonNull
-    @NotBlank
-    @BsonProperty("_id")
     private ObjectId  id;
     @BsonProperty("name")
     private String name;

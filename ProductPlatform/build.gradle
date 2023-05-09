@@ -21,6 +21,7 @@ dependencies {
     implementation("io.micronaut:micronaut-validation")
     implementation("io.micronaut.mongodb:micronaut-mongo-sync")
     implementation("io.micronaut.serde:micronaut-serde-bson")
+    implementation("io.projectreactor:reactor-core:3.5.0")
     runtimeOnly("ch.qos.logback:logback-classic")
     compileOnly("org.graalvm.nativeimage:svm")
 }

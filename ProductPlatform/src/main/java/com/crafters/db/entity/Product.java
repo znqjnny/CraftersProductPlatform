@@ -5,7 +5,9 @@ import io.micronaut.core.annotation.Creator;
 import io.micronaut.core.annotation.NonNull;
 import io.micronaut.serde.annotation.Serdeable;
 import org.bson.codecs.pojo.annotations.BsonCreator;
+import org.bson.codecs.pojo.annotations.BsonId;
 import org.bson.codecs.pojo.annotations.BsonProperty;
+import org.bson.types.ObjectId;
 
 import javax.validation.constraints.NotBlank;
 import java.time.LocalDateTime;
@@ -14,31 +16,70 @@ import java.time.LocalDateTime;
 public class Product {
     @Creator
     @BsonCreator
-    public Product(@NonNull @BsonProperty("name") String name) {
+    public Product(@BsonId ObjectId id,
+                   @BsonProperty("name") String name,
+                   @BsonProperty("createAt") LocalDateTime createdAt,
+                   @BsonProperty("updateAt") LocalDateTime updatedAt,
+                   @BsonProperty("expiredAt") LocalDateTime expiredAt,
+                   @BsonProperty("seat") String seat,
+                   @BsonProperty("location") String location,
+                   @BsonProperty("inStock") int inStock,
+                   @BsonProperty("sold") int sold,
+                   @BsonProperty("event") Event event,
+                   @BsonProperty("type") String type) {
+        this.id = id;
         this.name = name;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.expiredAt = expiredAt;
+        this.seat = seat;
+        this.location = location;
+        this.inStock = inStock;
+        this.sold = sold;
+        this.event = event;
+        this.type = type;
     }
-    @NonNull
-    @NotBlank
-    @BsonProperty("_id")
-    private String id;
 
-    public String getId() {
-        return id;
-    }
+    public Product() { }
 
-    @NonNull
-    @NotBlank
+
+    @BsonId
+    private ObjectId id;
+
+
     @BsonProperty("name")
     private String name;
+    @BsonProperty("createAt")
     private LocalDateTime createdAt;
+    @BsonProperty("updateAt")
     private LocalDateTime updatedAt;
+    @BsonProperty("expiredAt")
     private LocalDateTime expiredAt;
+    @BsonProperty("seat")
     private String seat;
+    @BsonProperty("location")
     private String location;
     @BsonProperty("inStock")
     private int inStock;
+    @BsonProperty("sold")
     private int sold;
+    @BsonProperty("event")
     private Event event;
+    @BsonProperty("type")
+    private String type;
+
+    public ObjectId getId() {
+        return id;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public Product withType(String type) {
+        this.type = type;
+        return this;
+    }
 
     //withName()
     public Product withName(String name) {
@@ -47,7 +88,7 @@ public class Product {
     }
 
     // withId() and other fields as well
-    public Product withId(String id) {
+    public Product withId(ObjectId id) {
         this.id = id;
         return this;
     }

@@ -1,5 +1,6 @@
 package com.crafters;
 
+import com.crafters.db.entity.Event;
 import com.crafters.db.entity.Product;
 import com.crafters.db.repo.MongoDbProductRepository;
 import io.micronaut.runtime.EmbeddedApplication;
@@ -8,6 +9,9 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 
 import jakarta.inject.Inject;
+
+import java.time.LocalDateTime;
+import java.util.List;
 
 @MicronautTest(transactional = false)
 class ProductPlatformTest {
@@ -21,16 +25,20 @@ class ProductPlatformTest {
     }
 
 
-
     @Inject
     MongoDbProductRepository mongoDbProductRepository;
 
 
-
     @Test
     void testProduct() {
-        mongoDbProductRepository.save(new Product("ticket").withInStock(100));
+        mongoDbProductRepository.save(new Product().withName("ticket13").withInStock(23100)
+                .withEvent(new Event().withName("even1t0").withCreatedAt(LocalDateTime.now())));
     }
 
+    @Test
+    void testProductList() {
+        List<Product> products = mongoDbProductRepository.list();
+        products.forEach(a -> System.out.println(a.getName() + "\n" + a.getId()));
+    }
 
 }

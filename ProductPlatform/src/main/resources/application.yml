@@ -8,6 +8,21 @@ netty:
 mongodb:
   uri: mongodb+srv://znqiu:qq302315@cluster0.xxlhaty.mongodb.net/product_platform
 db:
+  actor:
+    name: 'product_platform'
+    collection: 'actor'
+  customer:
+    name: 'product_platform'
+    collection: 'customer'
+  event:
+    name: 'product_platform'
+    collection: 'event'
+  order:
+    name: 'product_platform'
+    collection: 'order'
+  payment:
+    name: 'product_platform'
+    collection: 'payment'
   product:
     name: 'product_platform'
     collection: 'product'
